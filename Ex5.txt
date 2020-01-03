@@ -1,0 +1,26 @@
+
+Following the events described in assignment 2, the German military has despaired from war and decided to dismantle 
+all its tanks. To oversee this long and cumbersome procedure they require an efficient data structure to keep record of which
+tanks arrived for termination and which tanks were already dismantled. By implementing this data structure in Java 
+you may yet bring peace to Europe.
+ 
+The data structure needs to support the following operations: 
+
+Operation 			Description 										Runtime 
+
+Insert(t) 			Insert a new tank into the data structure to be prepared for termination. 		O(logn) 
+checkTerminated(t) 		Look for a tank in the data structure and say if it was terminated or not. 		O(logn) 
+listNonTerminatedTanks() 	Lists all tanks which await termination, sorted according to their serial numbers. 	O(n) 
+listTerminatedTanks() 		Lists all tanks which were terminated, sorted according to their serial numbers. 	O(n) 
+dismantleTanks() 		Dismantle all tanks which await termination. 						O(nlogn) 
+
+Implement the data structure in the following way: 
+- The tanks (represented by the supplied Tank class) will be held in 2 AVL trees, ordered according to their serial numbers. 
+The first tree stores tanks that await termination while the second tree stores all the dismantled tanks. 
+
+- New tanks are always inserted into the first tree. 
+
+- Whenever the dismantleTanks() function is called all tanks from the first tree are moved into the second tree. 
+
+The supplied classes contain a detailed API for the functions you will need. Do not use any external Java classes. 
+You may add any number of functions or fields as you see you fit. 
